@@ -2,7 +2,7 @@
 
 以校验 kubernetes 证书(后续部署 master 节点时生成的)为例：
 
-## 使用 openssl 命令
+## 一 使用 openssl 命令
 
 ``` bash
 $ openssl x509  -noout -text -in  kubernetes.pem
@@ -36,7 +36,7 @@ $ openssl x509  -noout -text -in  kubernetes.pem
 + 确认 X509v3 Subject Alternative Name 字段的内容和 kubernetes-csr.json 一致；
 + 确认 X509v3 Key Usage、Extended Key Usage 字段的内容和 ca-config.json 中 kubernetes profile 一致；
 
-## 使用 cfssl-certinfo 命令
+## 二 使用 cfssl-certinfo 命令
 
 ``` bash
 $ cfssl-certinfo -cert kubernetes.pem
